@@ -1,0 +1,55 @@
+<html>
+	<head>
+		<title> Rate the captions </title>
+		<h1 align = "center"> Rate the image captions </h1>
+	</head>
+	<body>
+		<!--<p align = center"><b>  {{ question }} </b></p> -->
+		
+			<p> Please rate each picture from 1-5 based on how closely they answer the given question, with 1 being not related at all and 5 being strongly related.</p>
+			<!--<p><b>{{ data[0] }}</b></p><br/>
+			<form action = "http://127.0.0.1:5000" method = "post">
+			{% set offset = 1 %}			
+			{% for i in range(5)  %}
+				{% set rowloop = loop %}
+				{% for j in range(4): %}
+					<div>{{ data[offset+j] }}</div>
+					<img src="{{url_for('static', filename= data['model1_img1'])}}" /><br/><br/>
+					<!--<p>How closely do you think this image matches the question? </p>
+					<input type="radio" value="1" name="rating{{ rowloop.index }}{{ loop.index }}"> One &nbsp &nbsp &nbsp 
+					<input type="radio" value="2" name="rating{{ rowloop.index }}{{ loop.index }}"> Two &nbsp &nbsp &nbsp 
+					<input type="radio" value="3" name="rating{{ rowloop.index }}{{ loop.index }}"> Three &nbsp &nbsp &nbsp 
+					<input type="radio" value="4" name="rating{{ rowloop.index }}{{ loop.index }}"> Four &nbsp &nbsp &nbsp 
+					<input type="radio" value="5" name="rating{{ rowloop.index }}{{ loop.index }}"> Five <br/><br/>
+					<!--<input type="submit" value="Next question"/>
+		
+				{% endfor %}
+			{% endfor %}
+			<input type="submit" value="Next question"/>
+			</form>	-->
+			
+			<p><b> {{ data["Question"] }} </p><br/>
+			<form action = "http://127.0.0.1:5000" method = "post">
+			<img src ="{{ url_for('static', filename= 'pic1.jpeg') }}"/> <br/>
+			<img src ="{{ url_for('static', filename= 'pic2.jpeg') }}"/> <br/>
+			<img src ="{{ url_for('static', filename= 'pic3.jpeg') }}"/> <br/>
+			<img src ="{{ url_for('static', filename= 'pic4.jpeg') }}"/> <br/>
+			<input type = "radio" name="easy_rating" value="{{ data['Easy_answer'] }}"> {{ data['Easy_answer'] }} &nbsp &nbsp &nbsp
+			<input type = "radio" name="easy_rating" value="{{ data['Easy_distractor1'] }}"> {{ data['Easy_distractor1'] }} &nbsp &nbsp &nbsp
+			<input type = "radio" name="easy_rating" value="{{ data['Easy_distractor2'] }}"> {{ data['Easy_distractor2'] }} &nbsp &nbsp &nbsp
+			<input type = "radio" name="easy_rating" value="{{ data['Easy_distractor3'] }}"> {{ data['Easy_distractor3'] }} &nbsp &nbsp &nbsp
+ <br/>
+			<img src ="{{ url_for('static', filename= 'pic1.jpeg') }}"/> <br/>
+			<img src ="{{ url_for('static', filename= 'pic2.jpeg') }}"/> <br/>
+			<img src ="{{ url_for('static', filename= 'pic3.jpeg') }}"/> <br/>
+			<img src ="{{ url_for('static', filename= 'pic4.jpeg') }}"/> <br/>
+			<input type = "radio" name="hard_rating" value="{{ data['Hard_answer'] }}"> {{ data['Hard_answer'] }} &nbsp &nbsp &nbsp
+			<input type = "radio" name="hard_rating" value="{{ data['Hard_distractor1'] }}"> {{ data['Hard_distractor1'] }} &nbsp &nbsp &nbsp
+			<input type = "radio" name="hard_rating" value="{{ data['Hard_distractor2'] }}"> {{ data['Hard_distractor2'] }} &nbsp &nbsp &nbsp
+			<input type = "radio" name="hard_rating" value="{{ data['Hard_distractor3'] }}"> {{ data['Hard_distractor3'] }} &nbsp &nbsp &nbsp
+<br/>
+			<input type="submit" value="Next Question"/>
+		
+
+	</body>
+</html>
